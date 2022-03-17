@@ -1,0 +1,23 @@
+﻿@model Lab03_DuongQuocAn.Models.Rubik
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h2>Chi tiết Rubik</h2>
+<h2 class="text-center" style="font-weight:600;margin-bottom:30px; color:orange;">@Html.DisplayFor(model => model.ten)</h2>
+<div style="text-align:center;" class="col-sm-12 col=md-12">
+    <div class="thumbnail">
+        <img src="@Html.DisplayFor(model=>model.hinh)" alt="thumbnail">
+    </div>
+    <div class="caption" style="font-size:16px;">
+        <p> <strong>Tên loại: </strong>@Html.DisplayFor(model => model.Loai.tenloai)</p>
+        <p> <strong>Mô tả:</strong> @Html.DisplayFor(model => model.mota)</p>
+        <p> <strong>Giá:</strong> @String.Format("{0:0,0}", @Model.gia) VNĐ</p>
+        <p><strong>Hãng:</strong> @Html.DisplayFor(model => model.hang)</p>
+        <p><strong>Số lượng tồn:</strong> @Html.DisplayFor(model => model.soluongton)</p>
+        <p>
+            <a href="#" class="btn btn-primary" role="button">Buy</a>
+            @Html.ActionLink("Back", "Index", "", new { @class = "btn btn-info" })
+        </p>
+    </div>
+</div>
